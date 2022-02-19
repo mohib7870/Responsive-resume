@@ -1,22 +1,15 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Write CSS code below */
+
 body{
     background-color: rgb(130, 142, 158);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.left-section{
-    background-color: rgb(177, 182, 233);
-}
-.right-section{
-    background-color: rgb(156, 222, 226);
-}
-.left-content{
-    padding: 1rem;
 }
 .main-content{
     min-height: 1000px;
@@ -24,9 +17,21 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
     display: grid;
-    grid-template-columns: 300px 700px;
     justify-content: center;
+    grid-template-columns: 300px 700px;  
 }
+.left-section{
+    grid-column: span 1;
+    background-color: rgb(177, 182, 233);
+}
+.right-section{
+    grid-column: span 1/ span 2;
+    background-color: rgb(156, 222, 226);
+}
+.left-content{
+    padding: 1rem;
+}
+
 .profile-image{
     width: 60%;
     margin: auto;
@@ -38,23 +43,20 @@ body{
 .name{
     font-size: 1.2rem;
     font-weight: 700;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     padding: 0.8rem 0.8rem 0.8rem 0.8rem;
     letter-spacing: 0.02px;
     text-transform: uppercase;
 }
 .designation{
     font-size: 1rem;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     text-transform: uppercase;
     padding-bottom: 0.5rem;
 }
 .description{
     font-size: 0.75rem;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     padding: 1rem 1rem 1rem 1rem;
 }
 .social-media ul li.icon{
@@ -76,21 +78,19 @@ body{
     padding-left: 15px;
     font-size: 16px;
 }
-.skills-title{
+.skills{
     font-size: 0.75rem;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     text-transform: uppercase;
     padding: 1rem 0.5rem 1rem 0.5rem;
 }
 .skill-name{
     font-size: 0.65rem;
-    font-weight: 0.65rem;
-    display: flex;
-    justify-content: left;
+    font-weight: 700;
+    text-align: left;
     padding-bottom: 0.5rem;
 }
-.skill-progress .progess-bar{
+.progress-bar{
     border: 1px solid white;
     background-color: rgb(255, 255, 255);
     height: 4px;
@@ -155,7 +155,7 @@ body{
     text-align: right;
 }
 @media only screen and (max-width: 673px) {
-    .main-content{grid-template-columns: 673px;}
+    .main-content{grid-template-columns: repeat(1, 1fr);}
     
 }
   
